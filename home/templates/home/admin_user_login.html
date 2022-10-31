@@ -1,0 +1,46 @@
+{% extends "home/layout.html" %}
+
+{% block head %}
+<section class="bg-dark text-light p-3 text-center">
+  <div class="container">
+    <h2 style="margin: 5px;">Admin User Login Form</h2>
+  </div>
+</section>
+{% endblock head %}
+
+{% block body %}
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" role="alert" style="margin: 5px;">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+<br>
+<br>
+<div class="container">
+  <form action="{% url 'home:admin_user_login' %}" method="POST" spellcheck="false" style="text-align: center;margin: 10px 10px;">
+    {% csrf_token %}
+    <div class="mb-3">
+      <input type="text" class="form-control" id="login-name" name="username" placeholder="username">
+    </div>
+    <div class="mb-3">
+      <input type="password" class="form-control" id="login-password" name="password" placeholder="password">
+    </div>
+    <div class="mb-3">
+      <input type="password" class="form-control" id="admin-key" name="admin-key" placeholder="admin-key">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock body %}
