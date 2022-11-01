@@ -5,14 +5,17 @@ from django import forms
 
 
 
-
-class AdminUserRegistrationForm(UserCreationForm):
-    first_name = forms.CharField(max_length=100)
-    last_name = forms.CharField(max_length=100)
-    email = forms.EmailField()
+class UserRegistrationForm(UserCreationForm):
     auth_key = forms.CharField(max_length=500)
 
     class Meta:
         model = User
-        fields = ['username','first_name','last_name','email','password1','password2', 'auth_key']
+        fields = ['username','password1','password2', 'auth_key']
+        exclude = ['id']
+
+class NormalUserRegistrationForm(UserCreationForm):
+
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2']
         exclude = ['id']

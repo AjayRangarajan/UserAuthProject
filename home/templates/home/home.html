@@ -1,0 +1,22 @@
+{% extends 'home/layout.html' %}
+
+{% block body %}
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" role="alert" style="margin: 5px;">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+<br>
+<br>
+<div class="container">
+    <h2>Welcome to home page!!</h2>
+    {% if request.user.username %}
+        <h4>username: {{ request.user.username }}</h4>
+    {% endif %}
+</div>
+
+
+{% endblock body %}

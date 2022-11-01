@@ -3,7 +3,7 @@
 {% block head %}
 <section class="bg-dark text-light p-3 text-center">
   <div class="container">
-    <h2 style="margin: 5px;">Admin User Login Form</h2>
+    <h2 style="margin: 5px;">User Login</h2>
   </div>
 </section>
 {% endblock head %}
@@ -19,7 +19,7 @@
 <br>
 <br>
 <div class="container">
-  <form action="{% url 'home:admin_user_login' %}" method="POST" spellcheck="false" style="text-align: center;margin: 10px 10px;">
+  <form action="{% url 'home:user_login' %}" method="POST" spellcheck="false" style="text-align: center;margin: 10px 10px;">
     {% csrf_token %}
     <div class="mb-3">
       <input type="text" class="form-control" id="login-name" name="username" placeholder="username">

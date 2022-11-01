@@ -4,7 +4,7 @@
 {% block head %}
 <section class="bg-dark text-light p-3 text-center">
   <div class="container">
-    <h2>Create Admin User</h2>
+    <h2>Create User</h2>
   </div>
 </section>
 {% endblock head %}
@@ -20,13 +20,13 @@
 {% endif %}
 
 <div class="container">
-  <form action="{% url 'home:create_admin_user' %}" method="POST" style="margin: 10px">
+  <form method="POST" style="margin: 10px">
     {% csrf_token %} 
     <fieldset class="form-group" style="margin: 10px">
       {{ form|crispy }}
     </fieldset>
     <div class="form-group text-center">
-      <button class="btn btn-outline-info" type="submit">Create Admin User</button>
+      <button class="btn btn-outline-info" type="submit">Create User</button>
     </div>
   </form>
 </div>
